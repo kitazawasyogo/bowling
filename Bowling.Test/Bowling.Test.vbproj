@@ -103,5 +103,11 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bowling\Bowling.vbproj">
+      <Project>{fe24db40-a70b-4a82-ba68-1bc26e98399c}</Project>
+      <Name>Bowling</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
