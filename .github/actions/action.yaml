@@ -1,0 +1,22 @@
+name: "Create issues from sessions"
+
+
+runs:
+  using: "composite"
+
+  steps:
+
+    - uses: peter-evans/create-issue-from-file@v4
+      with:
+        title: session1
+        content-filepath: docs/sessions/session1.md
+
+    - uses: peter-evans/create-issue-from-file@v4
+      with:
+        title: session2
+        content-filepath: docs/sessions/session2.md
+
+    - uses: peter-evans/create-issue-from-file@v4
+      with:
+        title: session3
+        content-filepath: docs/sessions/session3.md
