@@ -8,7 +8,7 @@
     Public Shared Function Score(pins As Integer()) As Integer
 
         If pins.Length <> 21 Then
-            Throw New ArgumentException
+            Throw New ArgumentException("値が有効な範囲にありません。")
         End If
 
         Return pins.Sum()
