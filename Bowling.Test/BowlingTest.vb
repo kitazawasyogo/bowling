@@ -19,7 +19,6 @@ Public Class BowlingTest
 
         Assert.That(actual, [Is].EqualTo(231))
 
- feat/array-length-check
     End Sub
 
     <Test()> Public Sub 配列の長さが少ない場合例外を投げるテスト()
@@ -36,8 +35,6 @@ Public Class BowlingTest
 
         End Try
 
-
- master
     End Sub
 
     <Test()> Public Sub 配列の長さが多い場合例外を投げるテスト()
