@@ -1,18 +1,31 @@
 ﻿Public Class Bowling
 
+
+    ''' <summary>
+    ''' 一投で倒したピンの数の記録
+    ''' </summary>
+    Private scoreList As New List(Of Integer)
+
+
     ''' <summary>
     ''' 点数を返す
     ''' </summary>
-    ''' <param name="pins">倒したピンの数の配列</param>
     ''' <returns>得点の合計値</returns>
-    Public Shared Function Score(pins As Integer()) As Integer
+    Public Function Score() As Integer
 
-        If pins.Length <> 21 Then
-            Throw New ArgumentException("値が有効な範囲にありません。")
-        End If
-
-        Return pins.Sum()
+        Return scoreList.Sum()
 
     End Function
+
+
+    ''' <summary>
+    ''' 一投で倒したピンの数を記録する
+    ''' </summary>
+    ''' <param name="oneThrow">一投で倒したピンの数</param>
+    Public Sub Bowl(oneThrow As Integer)
+
+        scoreList.Add(oneThrow)
+
+    End Sub
 
 End Class

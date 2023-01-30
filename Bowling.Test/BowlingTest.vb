@@ -3,53 +3,36 @@
 Public Class BowlingTest
 
 
-    <Test()> Public Sub NUnitでのサンプルコード()
+    <Test()> Public Sub 二投目に九ピン倒した段階のスコアを計算()
 
-        Dim actual As Integer = 2 + 3
+        Dim bowlingScore As New Bowling
+        bowlingScore.Bowl(10)
+        bowlingScore.Bowl(9)
 
-        Assert.That(actual, [Is].EqualTo(5))
-
-    End Sub
-
-
-    <Test()> Public Sub 点数を返すメソッドのテスト()
-
-        Dim pinsArray As Integer() = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21}
-        Dim actual As Integer = Bowling.Score(pinsArray)
-
-        Assert.That(actual, [Is].EqualTo(231))
+        Dim actual As Integer = bowlingScore.Score()
+        Assert.That(actual, [Is].EqualTo(19))
 
     End Sub
 
-    <Test()> Public Sub 配列の長さが少ない場合例外を投げるテスト()
 
-        Try
+    <Test()> Public Sub 十一投目に一ピン倒した段階のスコアを計算()
 
-            Dim pinsArray As Integer() = {1, 2, 3, 4, 5}
-            Bowling.Score(pinsArray)
-            Assert.Fail()
+        Dim bowlingScore As New Bowling
+        bowlingScore.Bowl(10)
+        bowlingScore.Bowl(9)
+        bowlingScore.Bowl(9)
+        bowlingScore.Bowl(9)
+        bowlingScore.Bowl(9)
+        bowlingScore.Bowl(9)
+        bowlingScore.Bowl(9)
+        bowlingScore.Bowl(9)
+        bowlingScore.Bowl(9)
+        bowlingScore.Bowl(9)
+        bowlingScore.Bowl(1)
 
-        Catch ex As ArgumentException
-
-            Assert.That(ex.Message, [Is].EqualTo("値が有効な範囲にありません。"))
-
-        End Try
-
-    End Sub
-
-    <Test()> Public Sub 配列の長さが多い場合例外を投げるテスト()
-
-        Try
-
-            Dim pinsArray As Integer() = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24}
-            Bowling.Score(pinsArray)
-            Assert.Fail()
-
-        Catch ex As ArgumentException
-
-            Assert.That(ex.Message, [Is].EqualTo("値が有効な範囲にありません。"))
-
-        End Try
+        Dim actual As Integer = bowlingScore.Score()
+        Assert.That(actual, [Is].EqualTo(92))
 
     End Sub
+
 End Class
